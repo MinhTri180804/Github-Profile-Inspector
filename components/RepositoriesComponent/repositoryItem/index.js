@@ -1,5 +1,5 @@
-import ElementCreate from '../elements/index.js';
-import FooterRepository from './footerRepository/index.js';
+import ElementCreate from '../../elements/index.js';
+import FooterRepository from '../../RepositoriesComponent/repositoryItem/footerRepository/index.js';
 import HeadRepository from './headRepository/index.js';
 
 export default function RepositoryItem({

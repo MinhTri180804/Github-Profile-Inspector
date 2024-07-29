@@ -1,5 +1,5 @@
-import { codeIcon, navigateIcon } from '../../../assets/icons/index.js';
-import ElementCreate from '../../elements/index.js';
+import { codeIcon, navigateIcon } from '../../../../assets/icons/index.js';
+import ElementCreate from '../../../elements/index.js';
 
 export default function HeadRepository({ title, url }) {
   //   icon element have children is svg tag

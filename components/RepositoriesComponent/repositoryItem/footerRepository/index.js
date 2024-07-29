@@ -1,5 +1,5 @@
-import { eyeIcon, starIcon } from '../../../assets/icons/index.js';
-import ElementCreate from '../../elements/index.js';
+import { eyeIcon, starIcon } from '../../../../assets/icons/index.js';
+import ElementCreate from '../../../elements/index.js';
 
 export default function FooterRepository({ mainLanguage, views, stars }) {
   const dotOfLanguage = ElementCreate({
@@ -58,6 +58,5 @@ function ActivityComponent({ className, iconActivity, valueActivity }) {
     childrenElement: [icon, value],
   });
 
-  console.log(valueActivity);
   return activity;
 }
