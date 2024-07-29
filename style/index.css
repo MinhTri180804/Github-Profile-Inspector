@@ -1,0 +1,433 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+button.change-theme {
+  position: fixed;
+  right: 12px;
+  top: 12px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 0px;
+}
+header .account__information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+header .account__information .logo {
+  width: 175px;
+  height: 175px;
+  overflow: hidden;
+  border-radius: 100%;
+  background: linear-gradient(to right, red, purple);
+  padding: 3px;
+}
+header .account__information .logo div.wrap-logo {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+header .account__information .logo div.wrap-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+}
+header .account__information .about {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+header .account__information .about .name {
+  font-size: 22px;
+  font-weight: normal;
+}
+header .account__information .about .nickname {
+  font-size: 18px;
+  font-weight: normal;
+  color: #868686;
+}
+header .account__information button.btn-view__more {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+header .account__information button.btn-view__more svg {
+  width: 24px;
+  height: 24px;
+}
+header .statistical__information {
+  margin: 42px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+header .statistical__information > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+main {
+  margin: 70px 0px;
+}
+main .repositories__section .title {
+  font-size: 22px;
+  margin-bottom: 42px;
+}
+main .repositories__section .content ul.repository__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item {
+  width: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  box-shadow: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .name:hover .value {
+  text-decoration: underline;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .name .icon {
+  width: 24px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .name .icon svg {
+  width: 100%;
+  height: 100%;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .name .value {
+  font-size: 18px;
+  width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 1;
+  white-space: nowrap;
+  max-width: 150px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header .header__information .tag {
+  padding: 4px 12px;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #141414;
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header div.view-more {
+  width: 24px;
+  height: 24px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .header div.view-more svg {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 150%;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .language {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .language .dot {
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 100%;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .language .value {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .activity {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .activity > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .activity > div .icon {
+  width: 18px;
+  height: 18px;
+}
+main .repositories__section .content ul.repository__list li.repository__list-item .footer .activity > div .icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+body#dark-mode {
+  background: #141414;
+  color: #fff;
+}
+body#dark-mode header button.btn-view__more {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+body#dark-mode header button.btn-view__more:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #141414;
+}
+body#dark-mode header .wrap-logo {
+  background: #141414;
+}
+body#dark-mode main .repositories__section li.repository__list-item:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: black;
+}
+body#dark-mode main .repositories__section li.repository__list-item:hover .tag {
+  background-color: #141414;
+  color: #fff;
+}
+
+body#light-mode {
+  background: #fff;
+  color: #141414;
+}
+body#light-mode header button.btn-view__more {
+  border-color: #141414;
+  background-color: transparent;
+}
+body#light-mode header button.btn-view__more:hover {
+  background-color: #141414;
+  color: #fff;
+}
+body#light-mode header button.btn-view__more:hover svg {
+  color: #fff;
+}
+body#light-mode header .wrap-logo {
+  background: #fff;
+}
+body#light-mode main .repositories__section li.repository__list-item:hover {
+  background-color: #141414;
+  border-color: #141414;
+  color: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+body#light-mode main .repositories__section li.repository__list-item:hover .tag {
+  background-color: #fff;
+  color: #141414;
+}
+body#light-mode main .repositories__section li.repository__list-item .tag {
+  background-color: #141414;
+  color: #fff;
+}
+
+/*# sourceMappingURL=index.css.map */
