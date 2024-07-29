@@ -1,6 +1,11 @@
+import ElementCreate from './components/elements/index.js';
+import HeadRepository from './components/repositoryItem/headRepository/index.js';
 import RepositoryItem from './components/repositoryItem/index.js';
+import repositoriesApi from './services/repositoriesApi/index.js';
 const body = document.body;
 const buttonChangeTheme = document.querySelector('.change-theme');
+
+const list = document.querySelector('.repository__list');
 
 buttonChangeTheme.addEventListener('click', () => {
   const idBody = body.getAttribute('id');
@@ -10,19 +15,30 @@ buttonChangeTheme.addEventListener('click', () => {
   console.log('cur theme: ', idBody);
 });
 
-const repository = RepositoryItem({
-  titleRepo: 'Testing',
-  descriptionRepo: 'lorem ajsdlkasjd lkasjdl ajsldkj alsjd',
-  urlRepo: 'google.com',
-  mainLanguageRepo: 'html',
-  viewsRepo: 12,
-  starsRepo: 10,
-});
+(async function () {
+  const response = await repositoriesApi({ username: 'MinhTri180804' });
+  const data = await response;
+  console.log(data);
 
-// const parent = ElementCreate({
-//   className: 'parentElement',
-//   childrenElement: [element],
-//   textContent: '123',
-//   tag: 'li',
-// });
-document.querySelector('.repository__list').appendChild(repository);
+  if (data.length) {
+    const repositories = data.map((repo) => {
+      return RepositoryItem({
+        titleRepo: repo.name,
+        descriptionRepo: repo.description,
+        mainLanguageRepo: repo.language,
+        viewsRepo: repo.stargazers_count,
+        starsRepo: repo.watchers_count,
+        urlRepo: repo.html_url,
+      });
+    });
+
+    repositories.forEach((element) => {
+      list.appendChild(element);
+    });
+  }
+  //   data.length ??
+  //     data.forEach((repo) => {
+
+  //       console.log(repositoryItem);
+  //     });
+})();

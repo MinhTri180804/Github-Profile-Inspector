@@ -17,7 +17,7 @@ export default function RepositoryItem({
   });
 
   const footerRepository = FooterRepository({
-    language,
+    mainLanguage: language,
     views,
     stars,
   });

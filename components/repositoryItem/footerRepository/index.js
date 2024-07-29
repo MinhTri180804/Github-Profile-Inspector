@@ -13,17 +13,17 @@ export default function FooterRepository({ mainLanguage, views, stars }) {
 
   const languageOfFooter = ElementCreate({
     className: 'language',
-    childrenElement: [dotOfLanguage, valueOfLanguage],
+    childrenElement: mainLanguage && [dotOfLanguage, valueOfLanguage],
   });
 
   const activityView = ActivityComponent({
-    valueActivity: views,
+    valueActivity: views ?? 0,
     iconActivity: eyeIcon,
     className: 'activity-view',
   });
 
   const activityStar = ActivityComponent({
-    valueActivity: stars,
+    valueActivity: stars ?? 0,
     iconActivity: starIcon,
     className: 'activity-star',
   });
@@ -50,7 +50,7 @@ function ActivityComponent({ className, iconActivity, valueActivity }) {
 
   const value = ElementCreate({
     className: 'value',
-    textContent: valueActivity,
+    textContent: valueActivity.toString() ?? '0',
   });
 
   const activity = ElementCreate({
@@ -58,5 +58,6 @@ function ActivityComponent({ className, iconActivity, valueActivity }) {
     childrenElement: [icon, value],
   });
 
+  console.log(valueActivity);
   return activity;
 }

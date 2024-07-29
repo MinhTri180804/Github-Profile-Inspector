@@ -22,7 +22,11 @@ export default function ElementCreate({
   id && element.setAttribute('id', id);
 
   // check if element is anchor element will add href attribute for it.
-  isAnchorElement(element) && element.setAttribute('href', href);
+  isAnchorElement(element) &&
+    (function () {
+      element.setAttribute('href', href);
+      element.setAttribute('target', '_blank');
+    })();
 
   //   check className prop is exits
   if (className) {

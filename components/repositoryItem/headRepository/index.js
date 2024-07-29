@@ -10,9 +10,10 @@ export default function HeadRepository({ title, url }) {
   childrenIcon.innerHTML = codeIcon;
 
   const childrenValue = ElementCreate({
-    tag: 'div',
+    tag: 'a',
     className: 'value',
     textContent: title,
+    href: url,
   });
 
   const parentName = ElementCreate({
