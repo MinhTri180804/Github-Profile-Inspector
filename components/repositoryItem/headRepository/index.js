@@ -1,5 +1,5 @@
-import { codeIcon, navigateIcon } from '../../../assets/icons';
-import ElementCreate from '../../elements';
+import { codeIcon, navigateIcon } from '../../../assets/icons/index.js';
+import ElementCreate from '../../elements/index.js';
 
 export default function HeadRepository({ title, url }) {
   //   icon element have children is svg tag
@@ -7,7 +7,7 @@ export default function HeadRepository({ title, url }) {
     tag: 'div',
     className: 'icon',
   });
-  childrenIcon.innerHtml = codeIcon;
+  childrenIcon.innerHTML = codeIcon;
 
   const childrenValue = ElementCreate({
     tag: 'div',
@@ -34,11 +34,13 @@ export default function HeadRepository({ title, url }) {
   });
 
   const viewMore = ElementCreate({
-    tag: 'div',
+    tag: 'a',
     className: 'view-more',
+    href: url ?? undefined,
   });
 
-  viewMore.innerHtml = navigateIcon;
+  // add icon svg into viewMore element
+  viewMore.innerHTML = navigateIcon;
 
   const HeadRepository = ElementCreate({
     tag: 'div',

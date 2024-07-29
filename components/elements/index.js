@@ -1,5 +1,5 @@
-import isAnchorElement from '../../utils/isAnchoElement.js';
-import isHTMLElement from '/../utils/isHtmlElement.js';
+import isAnchorElement from '../../utils/isAnchorElement.js';
+import isHTMLElement from '../../utils/isHtmlElement.js';
 // Props is object and it have 3 filed :
 // 1. className: array string, example ['class1', 'class2']
 // 2. id: string, example 'id1'

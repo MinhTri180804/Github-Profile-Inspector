@@ -172,7 +172,6 @@ main {
 
                 .value {
                   font-size: $font-size-4x;
-                  width: 150px;
                   text-overflow: ellipsis;
                   overflow: hidden;
                   line-clamp: 1;
@@ -194,7 +193,7 @@ main {
               }
             }
 
-            div.view-more {
+            .view-more {
               width: 24px;
               height: 24px;
 
@@ -307,6 +306,10 @@ body#dark-mode {
       }
     }
   }
+
+  .view-more {
+    color: $white-color;
+  }
 }
 
 // Styling for light mode
@@ -356,5 +359,9 @@ body#light-mode {
         }
       }
     }
+  }
+
+  .view-more {
+    color: $black-color;
   }
 }

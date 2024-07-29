@@ -1,4 +1,4 @@
-import ElementCreate from './components/elements/index.js';
+import RepositoryItem from './components/repositoryItem/index.js';
 const body = document.body;
 const buttonChangeTheme = document.querySelector('.change-theme');
 
@@ -10,22 +10,13 @@ buttonChangeTheme.addEventListener('click', () => {
   console.log('cur theme: ', idBody);
 });
 
-const element = ElementCreate({
-  tag: 'a',
-  className: 'children',
-  id: '123',
-  attribute: [
-    {
-      key: 'data-init',
-      value: '123',
-    },
-    {
-      key: 'data-success',
-      value: '456',
-    },
-  ],
-  href: 'google.com',
-  textContent: 'Testing',
+const repository = RepositoryItem({
+  titleRepo: 'Testing',
+  descriptionRepo: 'lorem ajsdlkasjd lkasjdl ajsldkj alsjd',
+  urlRepo: 'google.com',
+  mainLanguageRepo: 'html',
+  viewsRepo: 12,
+  starsRepo: 10,
 });
 
 // const parent = ElementCreate({
@@ -34,5 +25,4 @@ const element = ElementCreate({
 //   textContent: '123',
 //   tag: 'li',
 // });
-
-console.log(element);
+document.querySelector('.repository__list').appendChild(repository);
