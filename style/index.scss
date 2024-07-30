@@ -277,13 +277,27 @@ body#dark-mode {
   header {
     .btn-view__more {
       background-color: transparent;
-      color: $white-color;
       border-color: $white-color;
+
+      a {
+        color: $white-color;
+      }
+
+      svg {
+        color: $white-color;
+      }
 
       &:hover {
         background-color: $white-color;
         border-color: $white-color;
-        color: $black-color;
+
+        a {
+          color: $black-color;
+        }
+
+        svg {
+          color: $black-color;
+        }
       }
     }
 
@@ -349,10 +363,21 @@ body#light-mode {
       border-color: $black-color;
       background-color: transparent;
 
+      a {
+        color: $black-color;
+      }
+
+      svg {
+        color: $black-color;
+      }
+
       &:hover {
         background-color: $black-color;
         color: $white-color;
 
+        a {
+          color: $white-color;
+        }
         svg {
           color: $white-color !important;
         }
