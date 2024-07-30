@@ -7,6 +7,7 @@ export default function ProfileComponent({ accountInfoData }) {
     avatarUrl: accountInfoData.avatar_url,
     name: accountInfoData.name,
     nickname: accountInfoData.login,
+    detailsUrl: accountInfoData.html_url,
   });
 
   const statisticalFollow = LabelValuePairComponent({
