@@ -1,7 +1,8 @@
-import ElementCreate from '../elements';
+import ElementCreate from '../elements/index.js';
 
 export default function LabelValuePairComponent({
   tagComponent = 'div',
+  classNameComponent,
   label,
   value,
 }) {
@@ -19,6 +20,7 @@ export default function LabelValuePairComponent({
 
   const component = ElementCreate({
     tag: tagComponent,
+    className: classNameComponent ?? '',
     childrenElement: [titleElement, valueElement],
   });
 
