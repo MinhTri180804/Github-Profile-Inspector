@@ -1,7 +1,7 @@
 import RepositoryItem from '../RepositoriesComponent/repositoryItem/index.js';
 
 export default function RepositoryComponent({ dataRepositories }) {
-  if (!Array.isArray(dataRepositories) && !dataRepositories.length) return;
+  if (!Array.isArray(dataRepositories) && !dataRepositories?.length) return;
 
   const fragment = document.createDocumentFragment();
   dataRepositories.forEach((repo) => {
