@@ -65,6 +65,7 @@ export default function AccountInfoComponent({
   const anchorViewMoreElement = ElementCreate({
     tag: 'a',
     textContent: 'Xem chi tiết',
+    href: detailsUrl,
   });
 
   //   This is element button of parent element has class account__information
