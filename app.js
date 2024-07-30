@@ -1,8 +1,6 @@
-import ElementCreate from './components/elements/index.js';
-import HeadRepository from './components/repositoryItem/headRepository/index.js';
-import RepositoryItem from './components/repositoryItem/index.js';
-import repositoriesApi from './services/repositoriesApi/index.js';
+import HomePage from './pages/home/index.js';
 const body = document.body;
+const app = document.querySelector('#app');
 const buttonChangeTheme = document.querySelector('.change-theme');
 
 const list = document.querySelector('.repository__list');
@@ -16,29 +14,8 @@ buttonChangeTheme.addEventListener('click', () => {
 });
 
 (async function () {
-  const response = await repositoriesApi({ username: 'MinhTri180804' });
-  const data = await response;
-  console.log(data);
-
-  if (data.length) {
-    const repositories = data.map((repo) => {
-      return RepositoryItem({
-        titleRepo: repo.name,
-        descriptionRepo: repo.description,
-        mainLanguageRepo: repo.language,
-        viewsRepo: repo.stargazers_count,
-        starsRepo: repo.watchers_count,
-        urlRepo: repo.html_url,
-      });
-    });
-
-    repositories.forEach((element) => {
-      list.appendChild(element);
-    });
-  }
-  //   data.length ??
-  //     data.forEach((repo) => {
-
-  //       console.log(repositoryItem);
-  //     });
+  const elementOfPage = await HomePage();
+  elementOfPage.forEach((element) => {
+    app.appendChild(element);
+  });
 })();
