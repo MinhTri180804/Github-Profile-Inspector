@@ -4,27 +4,27 @@ import ElementCreate from '../elements/index.js';
 
 export default function ProfileComponent({ accountInfoData }) {
   const accountInfo = AccountInfoComponent({
-    avatarUrl: 'https://avatars.githubusercontent.com/u/122197394?v=4',
-    name: 'Nguyen Minh Tri',
-    nickname: 'MinhTri180804',
+    avatarUrl: accountInfoData.avatar_url,
+    name: accountInfoData.name,
+    nickname: accountInfoData.login,
   });
 
   const statisticalFollow = LabelValuePairComponent({
     tagComponent: 'li',
     label: 'Người theo dõi',
-    value: 12,
+    value: accountInfoData.followers,
   });
 
   const statisticalFollower = LabelValuePairComponent({
     tagComponent: 'li',
     label: 'Người đang theo dõi',
-    value: 20,
+    value: accountInfoData.following,
   });
 
   const statisticalRepositories = LabelValuePairComponent({
     tagComponent: 'li',
-    label: 'Kho lưu trữ',
-    value: 30,
+    label: 'Kho lưu trữ public',
+    value: accountInfoData.public_repos,
   });
 
   const statisticalInformation = ElementCreate({
